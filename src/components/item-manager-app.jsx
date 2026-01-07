@@ -20,41 +20,47 @@ function ItemManager() {
 
   function handleAddItem() {
     const name = itemName.current.value.trim();
+    const priceValue = Number(price); // convert price to number
 
+    // 1. Name must not be empty
     if (name === "") {
       setErrorMsg("Item name must not be empty");
       return;
     }
 
+    // 2. Item name must not be duplicated (case insensitive)
     const duplicated = items.some(
       (item) => item.name.toLowerCase() === name.toLowerCase()
     );
-
     if (duplicated) {
       setErrorMsg("Item must not be duplicated");
       return;
     }
 
+    // 3. Category must be selected
     if (category === "") {
       setErrorMsg("Please select a category");
       return;
     }
 
-    if (price < 0) {
+    // 4. Price must not be less than 0
+    if (price === "" || priceValue < 0) {
       setErrorMsg("Price must not be less than 0");
       return;
     }
 
+    // All validations passed, add new item
     const newItem = {
       id: nextId,
       name,
       category,
-      price,
+      price: priceValue,
     };
 
     setItems([...items, newItem]);
     setNextId(nextId + 1);
 
+    // Clear inputs and error
     itemName.current.value = "";
     setCategory("");
     setPrice("");
@@ -129,7 +135,8 @@ function ItemManager() {
                 <input
                   type="number"
                   value={price}
-                  onChange={(e) => setPrice(Number(e.target.value))}
+                  onChange={(e) => setPrice(e.target.value)}
+                  placeholder="Price"
                 />
               </td>
               <td>
