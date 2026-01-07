@@ -31,3 +31,11 @@
   font-size: 1.25rem;
   font-weight: 600;
 }
+
+/* Error message style */
+#error-message {
+  color: red;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
