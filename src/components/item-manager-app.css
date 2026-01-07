@@ -41,9 +41,9 @@
 
 /* Add Item button */
 button {
-  background-color: #1976d2;
-  color: white;
-  border: none;
+  background-color: #1976d2 !important;
+  color: white !important;
+  border: none !important;
   padding: 6px 14px;
   border-radius: 4px;
   cursor: pointer;
