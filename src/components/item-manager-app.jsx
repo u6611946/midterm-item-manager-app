@@ -11,6 +11,7 @@ function ItemManager() {
   const [items, setItems] = useState([]);
   const [errorMsg, setErrorMsg] = useState("");
 
+  // MUST use ref for name input
   const itemName = useRef(null);
 
   const [category, setCategory] = useState("");
@@ -87,13 +88,13 @@ function ItemManager() {
                 <td>{item.name}</td>
                 <td>
                   {item.category === "Stationary" && (
-                    <img src={stationaryLogo} />
+                    <img src={stationaryLogo} alt="Stationary" width="20" />
                   )}
                   {item.category === "Kitchenware" && (
-                    <img src={kitchenwareLogo} />
+                    <img src={kitchenwareLogo} alt="Kitchenware" width="20" />
                   )}
                   {item.category === "Appliance" && (
-                    <img src={applianceLogo} />
+                    <img src={applianceLogo} alt="Appliance" width="20" />
                   )}
                 </td>
                 <td>{item.price}</td>
@@ -107,10 +108,11 @@ function ItemManager() {
               </tr>
             ))}
 
+            {/* FORM ROW (must be last row) */}
             <tr>
               <td></td>
               <td>
-                <input type="text" ref={itemName} />
+                <input type="text" ref={itemName} placeholder="Item name" />
               </td>
               <td>
                 <select

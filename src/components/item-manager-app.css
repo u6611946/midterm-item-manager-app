@@ -5,13 +5,25 @@
 
 /* Table basic style */
 .item-table {
+  width: 100%;
   border-collapse: collapse;
   text-align: left;
 }
 
+/* Table cells */
 .item-table th,
 .item-table td {
   border-bottom: 1px solid black;
+  padding: 8px 12px;  
+}
+
+/* Column widths */
+#col-item-id {
+  width: 60px;
+}
+
+#col-item-name {
+  width: 35%;
 }
 
 /* Header */
