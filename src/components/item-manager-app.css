@@ -1,6 +1,6 @@
 :root {
   font-family: Arial, Helvetica, sans-serif;
-  padding-left: 20px; /* Header alignment */
+  padding-left: 20px;
 }
 
 /* Table basic style */
@@ -14,7 +14,7 @@
 .item-table th,
 .item-table td {
   border-bottom: 1px solid black;
-  padding: 8px 12px;  
+  padding: 8px 12px;
 }
 
 /* Column widths */
@@ -32,10 +32,23 @@
   font-weight: 600;
 }
 
-/* Error message style */
+/* Error message */
 #error-message {
   color: red !important;
-  font-weight: 500;
+  font-weight: bold;
   margin-top: 10px;
 }
 
+/* Add Item button */
+button {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #125aa0;
+}
