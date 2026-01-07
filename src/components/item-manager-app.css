@@ -34,7 +34,7 @@
 
 /* Error message style */
 #error-message {
-  color: red;
+  color: red !important;
   font-weight: 500;
   margin-top: 10px;
 }
